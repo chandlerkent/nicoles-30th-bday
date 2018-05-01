@@ -1,0 +1,26 @@
+<p>This image describes your gift. Can you guess what it is?</p>
+<br>
+
+<img src="hamilton.png" />
+
+<p>I guess my gift is:</p>
+{{input type='text' placeholder='Your guess...' enter='guess' value=guess}}
+
+<br>
+<br>
+
+{{#if hasMoreClues}}
+	<button {{action 'revealClue'}}>Give me a clue! ({{cluesLeft}} left)</button>
+{{else}}
+	<i>All out of clues!</i>
+{{/if}}
+
+<br>
+<br>
+
+{{#each revealedClues as |clue|}}
+	<p>{{clue.text}}</p>
+	<br>
+{{/each}}
+
+<br>
